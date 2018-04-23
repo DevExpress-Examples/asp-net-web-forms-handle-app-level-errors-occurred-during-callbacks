@@ -1,0 +1,34 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:CallbackErrorEvent\", "CallbackErrorEvent\", "{6CB222BC-A529-42DA-8A72-722FBCD7BDDB}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/CallbackErrorEvent"
+		Debug.AspNetCompiler.PhysicalPath = "CallbackErrorEvent\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\CallbackErrorEvent\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/CallbackErrorEvent"
+		Release.AspNetCompiler.PhysicalPath = "CallbackErrorEvent\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\CallbackErrorEvent\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "54013"
+	TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CB222BC-A529-42DA-8A72-722FBCD7BDDB}.Debug|.NET.ActiveCfg = Debug|.NET
+		{6CB222BC-A529-42DA-8A72-722FBCD7BDDB}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
