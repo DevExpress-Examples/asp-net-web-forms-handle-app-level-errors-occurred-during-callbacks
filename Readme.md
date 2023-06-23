@@ -3,28 +3,13 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E2398)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
 
-* [Default.aspx](./CS/CallbackErrorEvent/Default.aspx) (VB: [Default.aspx](./VB/CallbackErrorEvent/Default.aspx))
-* [Default.aspx.cs](./CS/CallbackErrorEvent/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/CallbackErrorEvent/Default.aspx.vb))
-* [ErrorPage.aspx](./CS/CallbackErrorEvent/ErrorPage.aspx) (VB: [ErrorPage.aspx](./VB/CallbackErrorEvent/ErrorPage.aspx))
-* [ErrorPage.aspx.cs](./CS/CallbackErrorEvent/ErrorPage.aspx.cs) (VB: [ErrorPage.aspx.vb](./VB/CallbackErrorEvent/ErrorPage.aspx.vb))
-* **[Global.asax](./CS/CallbackErrorEvent/Global.asax) (VB: [Global.asax](./VB/CallbackErrorEvent/Global.asax))**
-* [Web.config](./CS/CallbackErrorEvent/Web.config) (VB: [Web.config](./VB/CallbackErrorEvent/Web.config))
-<!-- default file list end -->
-# How to handle app level errors occurred inside ASP.NET WebForms controls during callbacks
+# ASP.NET Web Forms - How to handle application-level errors occurred during callbacks
 <!-- run online -->
 **[[Run Online]](https://codecentral.devexpress.com/e2398/)**
 <!-- run online end -->
 
-
-<p>This example illustrates how to catch and handle
-
-* Exceptions that occur inside DevExpress ASP.NET controls during a callback using the <a href="https://documentation.devexpress.com/#AspNet/DevExpressWebASPxWebControl_CallbackErrortopic">ASPxWebControl.CallbackError</a> event;
-* The remaining unhandled exceptions using the <a href="http://msdn.microsoft.com/en-us/library/24395wz3(v=vs.100).aspx">Application_Error</a> event in the Global.asax file.<br>It also shows how to write required information to the same log/storage (for further diagnostics, etc).</p>
-<p><br>Global.asax:<br><br></p>
-
+Use the static [ASPxWebControl.CallbackError](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxWebControl.CallbackError) event to handle callback exceptions thrown by DevExpress web controls on the server side. Delegate callback exception handling to the `Application_Error` event handler.
 
 ```cs
 void Application_Start(object sender, EventArgs e) {
@@ -33,10 +18,6 @@ void Application_Start(object sender, EventArgs e) {
 }
 ```
 
-
-<p> </p>
-
-
 ```vb
 Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
 	' Assign Application_Error as a callback error handler
@@ -44,9 +25,7 @@ Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
 End Sub
 ```
 
-
-<p> </p>
-
+The `Application_Error` event handler catches all unhandled ASP.NET errors while processing a request. You can use the [GetLastError](https://learn.microsoft.com/en-us/dotnet/api/system.web.httpserverutility.getlasterror) method to get and log the last exception's details.
 
 ```cs
 void Application_Error(object sender, EventArgs e) {
@@ -58,10 +37,6 @@ void Application_Error(object sender, EventArgs e) {
     AddToLog(exception.Message, exception.StackTrace);
 }
 ```
-
-
-<p> </p>
-
 
 ```vb
 Sub Application_Error(ByVal sender As Object, ByVal e As EventArgs)
@@ -75,9 +50,7 @@ Sub Application_Error(ByVal sender As Object, ByVal e As EventArgs)
 End Sub
 ```
 
-
-<p><br>By default, an unhandled exception occurs while a callback is displayed using the "alert" message.<br>In order to execute redirect to a custom error page, specify the <a href="https://documentation.devexpress.com/#AspNet/CustomDocument6914">callbackErrorRedirectUrl</a> configuration option:<br><br>Web.config:<br><br></p>
-
+When a callback exception occurs, you can redirect the application to another web resource. Use the [callbackErrorRedirectUrl](https://docs.devexpress.com/AspNet/6914/common-concepts/webconfig-modifications/webconfig-options/redirection-on-a-callback-error) configuration option to specify the redirection location.
 
 ```xml
 <configuration>
@@ -88,8 +61,20 @@ End Sub
 ```
 
 
-<p><br><em>Note: some controls (for example ASPxUploadControl) utilize the capabilities of the DevExpress.Web.ASPxUploadProgressHttpHandler handler to perform actions on a callback. System-level exceptions (request timeout, session timeout, etc.) that occur while executing the DevExpress.Web.ASPxUploadProgressHttpHandler handler can't be handled using the ASPxWebControl.CallbackError event. Use the default Application_Error event handler for this purpose.</em><br><br><strong>MVC Version:</strong><br><a href="https://www.devexpress.com/Support/Center/p/E4588">How to use the ASPxWebControl.CallbackError event to handle application-level errors occurred inside ASPxWebControls during callback processing</a></p>
+> Note
+> 
+> Some controls (for instance, [ASPxUploadControl](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxUploadControl)) utilize the capabilities of the [DevExpress.Web.ASPxUploadProgressHttpHandler](https://docs.devexpress.com/AspNet/6774/common-concepts/webconfig-modifications/aspxuploadprogresshttphandler) handler to perform actions on a callback. System-level exceptions (request timeout, session timeout, etc.) that occur while executing the `ASPxUploadProgressHttpHandler` handler cannot be handled using the `ASPxWebControl.CallbackError` event. Use the default `Application_Error` event handler for this purpose.
 
-<br/>
 
+## Files to Review
 
+* [Global.asax](./CS/CallbackErrorEvent/Global.asax) (VB: [Global.asax](./VB/CallbackErrorEvent/Global.asax))
+* [Web.config](./CS/CallbackErrorEvent/Web.config) (VB: [Web.config](./VB/CallbackErrorEvent/Web.config))
+
+## Documentation 
+
+* [Callbacks](https://docs.devexpress.com/AspNet/402559/common-concepts/callbacks)
+
+## More Examples 
+
+* [ASP.NET MVC - How to handle application-level errors occurred during callbacks](https://github.com/DevExpress-Examples/how-to-handle-app-level-errors-occurred-inside-aspnet-mvc-controls-during-callbacks-e4588)
