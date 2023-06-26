@@ -9,7 +9,7 @@
 **[[Run Online]](https://codecentral.devexpress.com/e2398/)**
 <!-- run online end -->
 
-Use the static [ASPxWebControl.CallbackError](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxWebControl.CallbackError) event to handle callback exceptions thrown by DevExpress web controls on the server side. Delegate callback exception handling to the `Application_Error` event handler.
+Use the static [ASPxWebControl.CallbackError](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxWebControl.CallbackError) event to handle callback exceptions thrown by DevExpress web controls server side. Delegate callback exception handling to the `Application_Error` event handler.
 
 ```cs
 void Application_Start(object sender, EventArgs e) {
@@ -25,7 +25,7 @@ Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
 End Sub
 ```
 
-The `Application_Error` event handler catches all unhandled ASP.NET errors while processing a request. You can use the [GetLastError](https://learn.microsoft.com/en-us/dotnet/api/system.web.httpserverutility.getlasterror) method to get and log the last exception's details.
+The `Application_Error` event handler catches all unhandled ASP.NET errors while processing a request. You can use the [GetLastError](https://learn.microsoft.com/en-us/dotnet/api/system.web.httpserverutility.getlasterror) method to get and log the details of the last exception.
 
 ```cs
 void Application_Error(object sender, EventArgs e) {
@@ -63,7 +63,7 @@ When a callback exception occurs, you can redirect the application to another we
 
 > Note
 > 
-> Some controls (for instance, [ASPxUploadControl](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxUploadControl)) utilize the capabilities of the [DevExpress.Web.ASPxUploadProgressHttpHandler](https://docs.devexpress.com/AspNet/6774/common-concepts/webconfig-modifications/aspxuploadprogresshttphandler) handler to perform actions on a callback. System-level exceptions (request timeout, session timeout, etc.) that occur while executing the `ASPxUploadProgressHttpHandler` handler cannot be handled using the `ASPxWebControl.CallbackError` event. Use the default `Application_Error` event handler for this purpose.
+> There are controls (for instance, [ASPxUploadControl](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxUploadControl)) that utilize the capabilities of the [DevExpress.Web.ASPxUploadProgressHttpHandler](https://docs.devexpress.com/AspNet/6774/common-concepts/webconfig-modifications/aspxuploadprogresshttphandler) handler to perform actions on a callback. System-level exceptions (request timeout, session timeout, etc.) that occur while executing the `ASPxUploadProgressHttpHandler` handler cannot be handled using the `ASPxWebControl.CallbackError` event. Use the default `Application_Error` event handler for this purpose.
 
 
 ## Files to Review
@@ -77,4 +77,4 @@ When a callback exception occurs, you can redirect the application to another we
 
 ## More Examples 
 
-* [ASP.NET MVC - How to handle application-level errors occurred during callbacks](https://github.com/DevExpress-Examples/how-to-handle-app-level-errors-occurred-inside-aspnet-mvc-controls-during-callbacks-e4588)
+* [ASP.NET MVC - How to handle application-level errors that occurred during callbacks](https://github.com/DevExpress-Examples/how-to-handle-app-level-errors-occurred-inside-aspnet-mvc-controls-during-callbacks-e4588)
