@@ -5,9 +5,6 @@
 <!-- default badges end -->
 
 # ASP.NET Web Forms - How to handle application-level errors occurred during callbacks
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/128566644/)**
-<!-- run online end -->
 
 Use the static [ASPxWebControl.CallbackError](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxWebControl.CallbackError) event to handle callback exceptions thrown by DevExpress web controls server side. Delegate callback exception handling to the `Application_Error` event handler.
 
