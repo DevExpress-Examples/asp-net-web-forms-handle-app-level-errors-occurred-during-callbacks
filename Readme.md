@@ -77,7 +77,7 @@ When a callback exception occurs, you can redirect the application to another we
 
 * [ASP.NET MVC - How to handle application-level errors that occurred during callbacks](https://github.com/DevExpress-Examples/how-to-handle-app-level-errors-occurred-inside-aspnet-mvc-controls-during-callbacks-e4588)
 <!-- feedback -->
-## Does This Example Address Your Development Requirements/Objectives?
+## Does this example address your development requirements/objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-web-forms-handle-app-level-errors-occurred-during-callbacks&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-web-forms-handle-app-level-errors-occurred-during-callbacks&~~~was_helpful=no)
 
